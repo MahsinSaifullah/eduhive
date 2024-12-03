@@ -8,7 +8,7 @@ const Logo = () => {
       className="flex items-center justify-center gap-2 lg:justify-start"
     >
       <Image src="/logo.png" alt="eduhive logo" width={32} height={32} />
-      <span className="hidden lg:block">EduHive</span>
+      <span className="hidden lg:block font-bold">EduHive</span>
     </Link>
   );
 };
