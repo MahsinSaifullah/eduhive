@@ -1,3 +1,5 @@
+'use client';
+
 import { Calendar, View, Views, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import { calendarEvents } from '@/lib/data';
