@@ -44,7 +44,7 @@ const columns = [
   },
 ];
 
-const LessonListPage = () => {
+const EventListPage = () => {
   const renderRow = (item: Event) => {
     return (
       <tr
@@ -102,4 +102,4 @@ const LessonListPage = () => {
   );
 };
 
-export default LessonListPage;
+export default EventListPage;
