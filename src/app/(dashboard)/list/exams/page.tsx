@@ -1,15 +1,16 @@
 import Pagination from '@/components/Pagination';
 import Table from '@/components/Table';
 import TableSearch from '@/components/TableSearch';
-import { lessonsData, role } from '@/lib/data';
+import { examsData, role } from '@/lib/data';
 import Image from 'next/image';
 import Link from 'next/link';
 
-type Lesson = {
+type Exam = {
   id: number;
   subject: string;
   class: string;
   teacher: string;
+  date: string;
 };
 
 const columns = [
@@ -27,13 +28,18 @@ const columns = [
     className: 'hidden md:table-cell',
   },
   {
+    header: 'Date',
+    accessor: 'date',
+    className: 'hidden md:table-cell',
+  },
+  {
     header: 'Actions',
     accessor: 'action',
   },
 ];
 
-const LessonListPage = () => {
-  const renderRow = (item: Lesson) => {
+const ExamListPage = () => {
+  const renderRow = (item: Exam) => {
     return (
       <tr
         key={item.id}
@@ -42,6 +48,7 @@ const LessonListPage = () => {
         <td className="flex items-center gap-4 p-4">{item.subject}</td>
         <td>{item.class}</td>
         <td className="hidden md:table-cell">{item.teacher}</td>
+        <td className="hidden md:table-cell">{item.date}</td>
         <td>
           <div className="flex items-center gap-2">
             <Link href={`/list/teachers/${item.id}`}>
@@ -82,10 +89,10 @@ const LessonListPage = () => {
           </div>
         </div>
       </div>
-      <Table columns={columns} renderRow={renderRow} data={lessonsData} />
+      <Table columns={columns} renderRow={renderRow} data={examsData} />
       <Pagination />
     </div>
   );
 };
 
-export default LessonListPage;
+export default ExamListPage;
